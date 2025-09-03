@@ -34,12 +34,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class ProfileRestControllerTest extends AbstractControllerTest {
     private static final String REST_URL_PROFILE = BaseHandler.REST_URL + "/profile";
     @SpyBean
+
     private ProfileRepository profileRepository;
     @Autowired
     private MockMvc mockMvc;
     @Autowired
     private ProfileMapper profileMapper;
-
     private ProfileRestController profileRestController;
 
     private final WebApplicationContext webApplicationContext;
@@ -90,4 +90,21 @@ class ProfileRestControllerTest extends AbstractControllerTest {
         ProfileTo profileToResult = JsonUtil.readValue(result.getResponse().getContentAsString(), ProfileTo.class);
         assertEquals(profileToResult, profileTo);
     }
+
+//    @Test
+//    @DisplayName(value = "get update User")
+//    @WithUserDetails(value = "user@gmail.com")
+//    public void testUpdateAuthUserNotEmpty() throws Exception {
+//        ProfileTo profileTo = ProfileTestData.getNewTo();
+//        Profile profile = ProfileTestData.getUpdated(1);
+//
+//        when(profileRepository.save(profile)).thenReturn(profile);
+//
+//        perform(MockMvcRequestBuilders.put(REST_URL_PROFILE))
+//                .andExpect(status().isOk());
+//
+//
+////        ProfileTo profileToResult = JsonUtil.readValue(result.getResponse().getContentAsString(), ProfileTo.class);
+//
+//    }
 }

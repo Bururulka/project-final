@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.Set;
 
 public class ProfileTestData {
-    public static MatcherFactory.Matcher<Profile> PROFILE_MATCHER = MatcherFactory.usingIgnoringFieldsComparator(Profile.class, "user");
-    public static MatcherFactory.Matcher<ProfileTo> PROFILE_MATCHER_TO = MatcherFactory.usingIgnoringFieldsComparator(ProfileTo.class, "user");
+    public static MatcherFactory.Matcher<Profile> PROFILE_MATCHER =
+            MatcherFactory.usingIgnoringFieldsComparator(Profile.class, "user");
 
     public static ProfileTo USER_PROFILE_TO = new ProfileTo(null,
             Set.of("assigned", "overdue", "deadline"),
@@ -36,8 +36,8 @@ public class ProfileTestData {
         return profile;
     }
 
-    public static ProfileTo getUpdatedTo(long id) {
-        return new ProfileTo(id,
+    public static ProfileTo getUpdatedTo() {
+        return new ProfileTo(null,
                 Set.of("assigned", "three_days_before_deadline", "two_days_before_deadline", "one_day_before_deadline", "deadline", "overdue"),
                 Set.of(new ContactTo("skype", "newSkype"),
                         new ContactTo("mobile", "+380987654321"),

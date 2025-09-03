@@ -45,7 +45,7 @@ public class Contact implements HasId {
 
     @NotBlank
     @Size(min = 2, max = 256)
-    @Column(name = "value", nullable = false)
+    @Column(name = "value_contact", nullable = false)
     @NoHtml
     private String value;
 
@@ -61,4 +61,6 @@ public class Contact implements HasId {
         private long id;
         private String code;
     }
+
+
 }

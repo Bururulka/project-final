@@ -8,6 +8,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Getter
 public class TaskTo extends TitleTo implements HasCode, HasIdAndParentId {
     @Code
@@ -19,13 +21,15 @@ public class TaskTo extends TitleTo implements HasCode, HasIdAndParentId {
     @Setter
     @Code
     private String statusCode;
+    Set<String> tags;
 
-    public TaskTo(Long id, String code, String title, String typeCode, String statusCode, Long parentId, Long projectId, Long sprintId) {
+    public TaskTo(Long id, String code, String title, String typeCode, String statusCode, Long parentId, Long projectId, Long sprintId, String... tags) {
         super(id, code, title);
         this.typeCode = typeCode;
         this.statusCode = statusCode;
         this.parentId = parentId;
         this.projectId = projectId;
         this.sprintId = sprintId;
+        this.tags = Set.of(tags);
     }
 }
