@@ -36,8 +36,8 @@ public class ProfileTestData {
         return profile;
     }
 
-    public static ProfileTo getUpdatedTo() {
-        return new ProfileTo(null,
+    public static ProfileTo getUpdatedTo(long id) {
+        return new ProfileTo(id,
                 Set.of("assigned", "three_days_before_deadline", "two_days_before_deadline", "one_day_before_deadline", "deadline", "overdue"),
                 Set.of(new ContactTo("skype", "newSkype"),
                         new ContactTo("mobile", "+380987654321"),
