@@ -58,14 +58,14 @@ class ProfileRestControllerTest extends AbstractControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
-//    @Test
-//    @DisplayName(value = "Auth User")
-//    @WithUserDetails(value = "user@gmail.com")
-//    public void testAuthUser() throws Exception {
-//        perform(MockMvcRequestBuilders.get(REST_URL_PROFILE)
-//                .contentType("application/json;charset=UTF-8"))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    @DisplayName(value = "Auth User")
+    @WithUserDetails(value = "user@gmail.com")
+    public void testAuthUser() throws Exception {
+        perform(MockMvcRequestBuilders.get(REST_URL_PROFILE)
+                .contentType("application/json;charset=UTF-8"))
+                .andExpect(status().isOk());
+    }
 
     @Test
     @DisplayName(value = "Error on database")
