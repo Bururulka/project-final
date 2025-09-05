@@ -6,6 +6,6 @@ RUN mvn clean install -P prod
 FROM eclipse-temurin:17-jre-alpine
 ARG JAR_FILE=target/*.jar
 COPY --from=build /build/${JAR_FILE} /jira.jar
-COPY ./resources /app/resources
+COPY ./resources /build/resources
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/jira.jar"]
