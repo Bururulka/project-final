@@ -7,5 +7,5 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=builder /app/target/*.jar /app/*.jar
 COPY ./resources /app/resources
-#EXPOSE 8080
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "/app/*.jar"]
