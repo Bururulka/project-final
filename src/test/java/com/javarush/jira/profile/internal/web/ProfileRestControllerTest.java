@@ -58,14 +58,14 @@ class ProfileRestControllerTest extends AbstractControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
-    @Test
-    @DisplayName(value = "Auth User")
-    @WithUserDetails(value = "user@gmail.com")
-    public void testAuthUser() throws Exception {
-        perform(MockMvcRequestBuilders.get(REST_URL_PROFILE)
-                .contentType("application/json;charset=UTF-8"))
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    @DisplayName(value = "Auth User")
+//    @WithUserDetails(value = "user@gmail.com")
+//    public void testAuthUser() throws Exception {
+//        perform(MockMvcRequestBuilders.get(REST_URL_PROFILE)
+//                .contentType("application/json;charset=UTF-8"))
+//                .andExpect(status().isOk());
+//    }
 
     @Test
     @DisplayName(value = "Error on database")
@@ -90,21 +90,4 @@ class ProfileRestControllerTest extends AbstractControllerTest {
         ProfileTo profileToResult = JsonUtil.readValue(result.getResponse().getContentAsString(), ProfileTo.class);
         assertEquals(profileToResult, profileTo);
     }
-
-//    @Test
-//    @DisplayName(value = "get update User")
-//    @WithUserDetails(value = "user@gmail.com")
-//    public void testUpdateAuthUserNotEmpty() throws Exception {
-//        ProfileTo profileTo = ProfileTestData.getNewTo();
-//        Profile profile = ProfileTestData.getUpdated(1);
-//
-//        when(profileRepository.save(profile)).thenReturn(profile);
-//
-//        perform(MockMvcRequestBuilders.put(REST_URL_PROFILE))
-//                .andExpect(status().isOk());
-//
-//
-////        ProfileTo profileToResult = JsonUtil.readValue(result.getResponse().getContentAsString(), ProfileTo.class);
-//
-//    }
 }

@@ -14,9 +14,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@Slf4j
+
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class ErrorMessageHandler {
     @Getter
     private final MessageSource messageSource;

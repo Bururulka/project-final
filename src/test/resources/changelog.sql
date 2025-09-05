@@ -331,7 +331,7 @@ values ('todo', 'ToDo', 3, 'in_progress,canceled|'),
 
 drop index UK_USER_BELONG;
 
---changeset мдфв:change_sequence
+--changeset Vlad:change_sequence
 
 CREATE sequence ACTIVITY_ID_SEQ;
 CREATE sequence TASK_ID_SEQ;
